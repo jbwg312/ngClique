@@ -38,40 +38,40 @@ Meteor.startup(function() {
 	});
 	const groups = [
 		{
-			"member_id": ["vhe5uD3denccJFmbP", "fnhs7HmykBqbZQmob", "jGrfL9kYzgr7Eh2Xz"],
+			"member_id": ["pW5B4tKgATxtD68wR", "c6doDs3Sq38LHZXkS", "PvXdJSXftNKNfioGD"],
 			"messages": [
 				{
-					"user_id": "vhe5uD3denccJFmbP",
+					"user_id": "pW5B4tKgATxtD68wR",
 					"time_sent": 1473268767800,
 					"text": "You suck"
 				},
 				{
-					"user_id": "fnhs7HmykBqbZQmob",
+					"user_id": "c6doDs3Sq38LHZXkS",
 					"time_sent": 1473268769800,
 					"text": "fuck you"
 				},
 				{
-					"user_id": 4,
+					"user_id": "PvXdJSXftNKNfioGD",
 					"time_sent": 1473268799800,
 					"text": "Suck ma ween"
 				}
 			]
 		},
 		{
-			"member_id": ["fnhs7HmykBqbZQmob", "jGrfL9kYzgr7Eh2Xz"],
+			"member_id": ["c6doDs3Sq38LHZXkS", "PvXdJSXftNKNfioGD"],
 			"messages": [
 				{
-					"user_id": "fnhs7HmykBqbZQmob",
+					"user_id": "c6doDs3Sq38LHZXkS",
 					"time_sent": 1473268769800,
 					"text": "What we doing tonight?"
 				},
 				{
-					"user_id": "jGrfL9kYzgr7Eh2Xz",
+					"user_id": "PvXdJSXftNKNfioGD",
 					"time_sent": 1473268799800,
 					"text": "Yo mama"
 				},
 				{
-					"user_id": "fnhs7HmykBqbZQmob",
+					"user_id": "c6doDs3Sq38LHZXkS",
 					"time_sent": 1473268799800,
 					"text": "nice"
 				}

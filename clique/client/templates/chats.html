@@ -14,6 +14,18 @@
               Delete
             </ion-option-button> -->
           </ion-item>
+
         </ion-list>
+
+			<ion-list>
+				<ion-item ng-repeat="chat in chats.users"
+				class="item-chat item-remove-animate item-avatar item-icon-right"
+				type="item-text-wrap">
+				<img ng-src="{{ chat.picture }}">
+				<h2>{{ chat.name }}</h2>
+				<span class="last-message-timestamp">{{ chat.groups[0].last_logout | calendar }}</span>
+				<i class="icon ion-chevron-right icon-accessory"></i>
+				</ion-item>
+			<ion-list>
   </ion-content>
 </ion-view>
