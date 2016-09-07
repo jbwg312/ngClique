@@ -25,9 +25,18 @@ export default class RoutesConfig extends Config {
             controller: 'ChatCtrl as chat'
           }
         }
+      })
+      .state('tab.login', {
+        url:'/login',
+        views: {
+          'tab-login': {
+            templateUrl: 'client/templates/login.html',
+            controller: 'LoginCtrl as login'
+          }
+        }
       });
 
-    this.$urlRouterProvider.otherwise('tab/chats');
+    this.$urlRouterProvider.otherwise('tab/login');
   }
 }
 

@@ -8,6 +8,7 @@ export default class ChatsCtrl extends Controller {
 
     this.helpers({
       data() {
+
 				return Chats.find();
       },
 			users(){
@@ -29,6 +30,7 @@ export default class ChatsCtrl extends Controller {
 			groups(){
 				return Groups.find()
 			}
+
     });
   }
   remove(chat) {
