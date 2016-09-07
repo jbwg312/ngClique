@@ -1,6 +1,6 @@
 import Moment from 'moment';
 import { Controller } from 'angular-ecmascript/module-helpers';
-import { Chats } from '../../../lib/collections';
+import { Chats, Users } from '../../../lib/collections';
 
 export default class ChatsCtrl extends Controller {
   constructor() {
@@ -9,7 +9,12 @@ export default class ChatsCtrl extends Controller {
     this.helpers({
       data() {
         return Chats.find();
-      }
+      },
+			users(){
+				var x = Users.find();
+				console.log(x.collection._docs);
+				return Users.find();
+			}
     });
   }
   remove(chat) {

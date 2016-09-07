@@ -2,7 +2,11 @@ import Ionic from 'ionic-scripts';
 import { _ } from 'meteor/underscore';
 import { Meteor } from 'meteor/meteor';
 import { Controller } from 'angular-ecmascript/module-helpers';
+<<<<<<< HEAD
 import { Chats, Messages } from '../../../lib/collections';
+=======
+import { Chats, Users } from '../../../lib/collections';
+>>>>>>> a1906c11f23cf13c0350d2bc164c965e4734d9b6
 
 export default class ChatCtrl extends Controller {
   constructor() {
@@ -18,7 +22,11 @@ export default class ChatCtrl extends Controller {
       },
       data() {
         return Chats.findOne(this.chatId);
-      }
+      },
+			users(){
+				console.log(Users.find());
+				return Users.find();
+			}
     });
   }
   sendMessage() {
