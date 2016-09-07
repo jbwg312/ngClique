@@ -10,6 +10,7 @@ import Loader from 'angular-ecmascript/module-loader';
 import { Meteor } from 'meteor/meteor';
 
 // Modules
+import LoginCtrl from '../controllers/login.controller';
 import ChatsCtrl from '../controllers/chats.controller';
 import ChatCtrl from '../controllers/chat.controller';
 import InputDirective from '../directives/input.directive';
@@ -26,6 +27,7 @@ Angular.module(App, [
 ]);
 
 new Loader(App)
+  .load(LoginCtrl)
   .load(ChatsCtrl)
   .load(ChatCtrl)
   .load(InputDirective)
