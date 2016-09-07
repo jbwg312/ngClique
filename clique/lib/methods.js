@@ -3,9 +3,10 @@ import { Chats, Messages } from '../lib/collections';
 
 Meteor.methods({
   newMessage(message) {
-    
+
     check(message, {
       text: String,
+      type: 'text',
       chatId: String
     });
 

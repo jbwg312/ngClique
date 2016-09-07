@@ -8,6 +8,7 @@ import { Chats, Messages, Users } from '../../../lib/collections';
 export default class ChatCtrl extends Controller {
   constructor() {
     super(...arguments);
+    console.log(...arguments);
 
     this.chatId = this.$stateParams.chatId;
     this.isIOS = Ionic.Platform.isWebView() && Ionic.Platform.isIOS();
