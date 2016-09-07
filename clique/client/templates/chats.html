@@ -6,7 +6,11 @@
                     type="item-text-wrap"
                     href="#/tab/chats/{{ group._id }}">
             <img src="./public/images/team.png">
+            <!-- <img ng-src="{{ chat.picture }}"> -->
             <p ng-repeat="member in group.member_id">{{ member }}</p>
+            <!-- <h2>{{ chat.name }}</h2>
+            <p>{{ chat.lastMessage.text }}</p> -->
+            <!-- <span class="last-message-timestamp">{{ chat.lastMessage.timestamp | calendar }}</span> -->
             <i class="icon ion-chevron-right icon-accessory"></i>
             <!-- TODO: Delete Button if we want it  -->
             <!-- <ion-option-button class="button-assertive" ng-click="chats.remove(chat)">
