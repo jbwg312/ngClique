@@ -8,8 +8,6 @@ export default class ChatsCtrl extends Controller {
 
     this.helpers({
       data() {
-        console.log("*************DATA***************");
-        console.log(Groups.find());
         return Groups.find();
       }
     });
