@@ -6,6 +6,7 @@ Meteor.methods({
 
     check(message, {
       text: String,
+      type: 'text',
       chatId: String
     });
 
