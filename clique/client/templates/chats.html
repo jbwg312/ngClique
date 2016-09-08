@@ -1,4 +1,4 @@
-<ion-view view-title="Groups">
+<ion-view view-title="Groups" class="foo">
   <ion-content>
     <ion-list>
             <ion-item ng-repeat="group in chats.data | orderBy:'-lastMessage.timestamp'"
@@ -17,6 +17,13 @@
               Delete
             </ion-option-button> -->
           </ion-item>
-        </ion-list>
+    </ion-list>
+    <!-- <form novalidate class="simple-form">
+      <input type="text" class="groupInput" placeholder="Group ID" ng-model="groupID"/>
+      <input type="text" class="groupInput" placeholder="Picture"/>
+      <input type="text" class="groupInput" placeholder="Filters"/>
+      <input type="text" class="groupInput" placeholder="Groups"/>
+      <input type="submit" name="name" value="Submit">
+    </form> -->
   </ion-content>
 </ion-view>

@@ -17,6 +17,7 @@ export default class ChatCtrl extends Controller {
         return Messages.find({ chatId: this.chatId });
       },
       data() {
+        console.log(this.chatId);
         return Chats.findOne(this.chatId);
       },
 			users(){
