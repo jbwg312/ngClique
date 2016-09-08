@@ -3,6 +3,8 @@ import { Meteor } from 'meteor/meteor';
 import { Chats, Messages, Users, Groups } from '../lib/collections';
 
 Meteor.startup(function() {
+	if (Users.find().count() !== 0) return;
+
 	const users = [
 			{
 			"name": "Ben Goebel",
@@ -36,6 +38,8 @@ Meteor.startup(function() {
 	users.forEach((user) => {
 		Users.insert(user);
 	});
+	if (Groups.find().count() !== 0) return;
+
 	const groups = [
 		{
 			"member_id": ["pW5B4tKgATxtD68wR", "c6doDs3Sq38LHZXkS", "PvXdJSXftNKNfioGD"],

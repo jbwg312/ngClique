@@ -1,31 +1,27 @@
 import Moment from 'moment';
 import { Controller } from 'angular-ecmascript/module-helpers';
-import { Chats, Users, Groups } from '../../../lib/collections';
+import { Chats, Groups, Users } from '../../../lib/collections';
 
 export default class ChatsCtrl extends Controller {
-  constructor() {
+  constructor($reactive) {
     super(...arguments);
 
     this.helpers({
       data() {
-
 				return Chats.find();
       },
 			users(){
-				const arr = [];
-				const groups = Groups.find().fetch();
-				groups.forEach(function (group) {
-					console.log(group.member_id);
-					const arr2 = [];
-					group.member_id.forEach((member)=>{
-						console.log(Users.find({_id: member}).fetch())
-					});
+				let arr = [];
+				let groups = Groups.find().fetch();
+				groups.map((thing)=>{
+					let arr2 = []
+					thing.member_id.forEach((thingy)=>{
+						arr2.push(Users.find({_id: thingy}));
+					})
 					arr.push(arr2)
 				})
-				Promise.all(arr).then(function(data){
-					console.log(data);
-					return arr;
-				})
+				return arr;
+				// return this.callMethod('findUsers');
 			},
 			groups(){
 				return Groups.find()
@@ -37,3 +33,5 @@ export default class ChatsCtrl extends Controller {
     this.data.remove(chat);
   }
 }
+
+ChatsCtrl.$inject = ['$reactive'];
