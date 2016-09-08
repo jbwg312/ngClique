@@ -5,10 +5,10 @@ import { Controller } from 'angular-ecmascript/module-helpers';
 import { Chats, Messages, Users, Groups } from '../../../lib/collections';
 
 
-export default class ChatCtrl extends Controller {
+export default class ChatNodeCtrl extends Controller {
   constructor() {
     super(...arguments);
-    this.groupId = this.$stateParams.groupId;
+    this.groupId = "QCe3qedMaxqmT22az";
     this.isIOS = Ionic.Platform.isWebView() && Ionic.Platform.isIOS();
     this.isCordova = Meteor.isCordova;
 		this.message = '';
@@ -40,6 +40,19 @@ export default class ChatCtrl extends Controller {
 					})
 				}
 				return arr.join(', ').toLowerCase();
+			},
+			initials(){
+				let arr = [];
+				let group = Groups.findOne(this.groupId);
+				if(group){
+					group.member_id.forEach((thingy)=>{
+						var x = Users.find({userId: thingy}).fetch()[0];
+						arr.push(x.name);
+					})
+				}
+				return arr.map((val)=>{
+					return val[0]
+				});
 			}
     });
   }
@@ -83,4 +96,4 @@ export default class ChatCtrl extends Controller {
  }
 }
 
-ChatCtrl.$inject = ['$stateParams', '$timeout', '$ionicScrollDelegate'];
+ChatNodeCtrl.$inject = ['$stateParams', '$timeout', '$ionicScrollDelegate'];
