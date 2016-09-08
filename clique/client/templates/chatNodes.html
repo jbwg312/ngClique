@@ -4,7 +4,7 @@
     <button class="button button-clear"><img class="header-picture" ng-src="{{ chat.data.picture }}"></button>
   </ion-nav-buttons>
   <ion-content class="chat" delegate-handle="chatScroll">
-
+<!--
     <div class="message-list">
       <div ng-repeat="message in chat.data.messages | orderBy:'time_sent'" class="message-wrapper">
         <div class="message" ng-class-even="'message-mine'" ng-class-odd="'message-other'">
@@ -12,12 +12,21 @@
             <p><span class="message-timestamp">{{ message.timestamp | amDateFormat: 'HH:MM' }}</span></p>
         </div>
       </div>
-    </div>
-<div ng-repeat="member in chat.initials">
-	<div class="inner">
-		{{member}}
-	</div>
-</div>
+    </div> -->
+		<div class="container">
+		    <div class="top-left">
+		         <span>TL</span>
+		    </div>
+		    <div class="top-right">
+		        <span>TR</span>
+		    </div>
+		    <div class="bottom-left">
+		        <span>BL</span>
+		    </div>
+		    <div class="bottom-right">
+		       <span>BR</span>
+		    </div>
+		</div>
 
   </ion-content>
   <ion-footer-bar keyboard-attach class="bar-stable footer-chat item-input-inset">
