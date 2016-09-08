@@ -2,26 +2,43 @@ import Ionic from 'ionic-scripts';
 import { _ } from 'meteor/underscore';
 import { Meteor } from 'meteor/meteor';
 import { Controller } from 'angular-ecmascript/module-helpers';
-import { Chats, Messages, Users } from '../../../lib/collections';
+import { Chats, Messages, Users, Groups } from '../../../lib/collections';
 
 
 export default class ChatCtrl extends Controller {
   constructor() {
     super(...arguments);
-    this.chatId = this.$stateParams.chatId;
+    this.groupId = this.$stateParams.groupId;
     this.isIOS = Ionic.Platform.isWebView() && Ionic.Platform.isIOS();
     this.isCordova = Meteor.isCordova;
 
     this.helpers({
       messages() {
-        return Messages.find({ chatId: this.chatId });
+        return Messages.find({ chatId: this.groupId });
       },
       data() {
-				var obj = {};
-        return Chats.findOne(this.chatId);
+        return Groups.findOne(this.groupId);
       },
 			users(){
-				return Users.find();
+				let arr = [];
+				let group = Groups.findOne(this.groupId);
+				if(group){
+					group.member_id.forEach((thingy)=>{
+						arr.push(Users.find({userId: thingy}).fetch()[0]);
+					})
+				}
+				return arr;
+			},
+			members(){
+				let arr = [];
+				let group = Groups.findOne(this.groupId);
+				if(group){
+					group.member_id.forEach((thingy)=>{
+						var x = Users.find({userId: thingy}).fetch()[0];
+						arr.push(x.name);
+					})
+				}
+				return arr.join(', ').toLowerCase();
 			}
     });
   }

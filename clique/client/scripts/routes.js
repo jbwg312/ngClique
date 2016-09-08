@@ -18,7 +18,7 @@ export default class RoutesConfig extends Config {
         }
       })
       .state('tab.chat', {
-        url: '/chats/:chatId',
+        url: '/chats/:groupId',
         views: {
           'tab-chats': {
             templateUrl: 'client/templates/chat.html',
@@ -36,7 +36,7 @@ export default class RoutesConfig extends Config {
         }
       });
 
-    this.$urlRouterProvider.otherwise('tab/login');
+    this.$urlRouterProvider.otherwise('tab/chats');
   }
 }
 
