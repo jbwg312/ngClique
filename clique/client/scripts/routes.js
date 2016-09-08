@@ -26,6 +26,15 @@ export default class RoutesConfig extends Config {
           }
         }
       })
+      .state('tab.chatNodes', {
+        url: '/chatNode/QCe3qedMaxqmT22az',
+        views: {
+          'tab-chats': {
+            templateUrl: 'client/templates/chatNodes.html',
+            controller: 'ChatNodeCtrl as chat'
+          }
+        }
+      })
       .state('tab.login', {
         url:'/login',
         views: {

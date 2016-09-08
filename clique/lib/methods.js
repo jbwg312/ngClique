@@ -17,17 +17,5 @@ Meteor.methods({
     Chats.update(message.chatId, { $set: { lastMessage: message } });
 
     return messageId;
-  },
-	findUsers(){
-		let arr = [];
-		let groups = Groups.find().fetch();
-		groups.map((thing)=>{
-			thing.member_id.forEach((thingy)=>{
-				arr.push(Users.find({_id: thingy}));
-			})
-			arr.push('$')
-		})
-		console.log(arr);
-		return arr;
-	}
+  }
 });
