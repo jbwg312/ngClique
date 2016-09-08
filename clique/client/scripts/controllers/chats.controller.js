@@ -7,20 +7,19 @@ export default class ChatsCtrl extends Controller {
     super(...arguments);
     this.helpers({
       data() {
-				return Chats.find();
+				return Groups.find();
       },
 			users(){
 				let arr = [];
 				let groups = Groups.find().fetch();
 				groups.map((thing)=>{
-					let arr2 = []
+					let arr2 = [];
 					thing.member_id.forEach((thingy)=>{
-						arr2.push(Users.find({_id: thingy}));
+						arr2.push(Users.find({userId: thingy}).fetch());
 					})
 					arr.push(arr2)
 				})
 				return arr;
-				// return this.callMethod('findUsers');
 			},
 			groups(){
 				return Groups.find()

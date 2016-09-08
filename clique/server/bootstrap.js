@@ -7,6 +7,7 @@ Meteor.startup(function() {
 
 	const users = [
 			{
+				"userId": 1,
 			"name": "Ben Goebel",
 			"picture": "https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/12744710_10154010167591995_8103835184132979821_n.jpg?oh=d226b695be065a4aebb5a832736621a5&oe=5849FCC6",
 			"filters": [],
@@ -14,12 +15,14 @@ Meteor.startup(function() {
 				{"group_id": 1, "last_login": 1473268760000, "last_logout": 1473268767834 }
 			]},
 			{
+				"userId": 2,
 			"name": "Tim Pender",
 			"picture": "https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/14067695_10154493797131757_8671186380823512233_n.jpg?oh=dbbb33d2b25271c8aaeb9441e1785a95&oe=584A07F3",
 			"filters": [],
 			"groups": [
 			]},
 			{
+				"userId": 3,
 			"name": "Mike Tobin",
 			"picture": "https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/1043978_10200724760056359_768476874_n.jpg?oh=64501cc61a45d6aada9b6812066214e0&oe=583A634D",
 			"filters": [],
@@ -27,6 +30,7 @@ Meteor.startup(function() {
 				{"group_id": 1, "last_login": 1473263560000, "last_logout": 1473264867834 }
 			]},
 			{
+				"userId": 4,
 			"name": "Jim Watkins",
 			"picture": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAATLAAAAJDU1ZmQ3YmNiLTRmOTYtNGJlNy1hMTI2LTIwZTEyMjc3OGQxNg.jpg",
 			"filters": [],
@@ -38,44 +42,43 @@ Meteor.startup(function() {
 	users.forEach((user) => {
 		Users.insert(user);
 	});
-	if (Groups.find().count() !== 0) return;
 
 	const groups = [
 		{
-			"member_id": ["pW5B4tKgATxtD68wR", "c6doDs3Sq38LHZXkS", "PvXdJSXftNKNfioGD"],
+			"member_id": [1, 2, 4 ],
 			"messages": [
 				{
-					"user_id": "pW5B4tKgATxtD68wR",
+					"user_id": 1,
 					"time_sent": 1473268767800,
 					"text": "You suck"
 				},
 				{
-					"user_id": "c6doDs3Sq38LHZXkS",
+					"user_id": 2,
 					"time_sent": 1473268769800,
 					"text": "fuck you"
 				},
 				{
-					"user_id": "PvXdJSXftNKNfioGD",
+					"user_id": 4 ,
 					"time_sent": 1473268799800,
 					"text": "Suck ma ween"
 				}
 			]
 		},
 		{
-			"member_id": ["c6doDs3Sq38LHZXkS", "PvXdJSXftNKNfioGD"],
+			"member_id": [2, 4 ],
 			"messages": [
 				{
-					"user_id": "c6doDs3Sq38LHZXkS",
+					"user_id": 2,
 					"time_sent": 1473268769800,
 					"text": "What we doing tonight?"
 				},
 				{
-					"user_id": "PvXdJSXftNKNfioGD",
+					"user_id": 4 ,
 					"time_sent": 1473268799800,
 					"text": "Yo mama"
 				},
 				{
-					"user_id": "c6doDs3Sq38LHZXkS",
+					"user_id": 2,
 					"time_sent": 1473268799800,
 					"text": "nice"
 				}
