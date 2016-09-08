@@ -1,13 +1,15 @@
 <ion-view view-title="Groups" class="foo">
   <ion-content>
     <ion-list>
-            <ion-item ng-repeat="group in chats.data | orderBy:'-lastMessage.timestamp'"
+            <ion-item ng-repeat="group in chats.users track by $index"
                     class="item-chat item-remove-animate item-avatar item-icon-right"
                     type="item-text-wrap"
-                    href="#/tab/chats/{{ group._id }}">
+                    href="#/tab/chats/{{ chats.data[$index]._id }}">
             <img src="images/team.png" alt="NO PIC">
             <!-- <img ng-src="{{ chat.picture }}"> -->
-            <p ng-repeat="member in group.member_id">{{ member }}</p>
+						<ul ng-repeat="member in group">
+							<li>{{ member[0].name }}</li>
+						</ul>
             <!-- <h2>{{ chat.name }}</h2>
             <p>{{ chat.lastMessage.text }}</p> -->
             <!-- <span class="last-message-timestamp">{{ chat.lastMessage.timestamp | calendar }}</span> -->
@@ -17,13 +19,8 @@
               Delete
             </ion-option-button> -->
           </ion-item>
-    </ion-list>
-    <!-- <form novalidate class="simple-form">
-      <input type="text" class="groupInput" placeholder="Group ID" ng-model="groupID"/>
-      <input type="text" class="groupInput" placeholder="Picture"/>
-      <input type="text" class="groupInput" placeholder="Filters"/>
-      <input type="text" class="groupInput" placeholder="Groups"/>
-      <input type="submit" name="name" value="Submit">
-    </form> -->
+
+        </ion-list>
+
   </ion-content>
 </ion-view>
