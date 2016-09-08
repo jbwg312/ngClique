@@ -5,7 +5,6 @@ import { Chats, Groups, Users } from '../../../lib/collections';
 export default class ChatsCtrl extends Controller {
   constructor($reactive) {
     super(...arguments);
-
     this.helpers({
       data() {
 				return Chats.find();
@@ -26,7 +25,6 @@ export default class ChatsCtrl extends Controller {
 			groups(){
 				return Groups.find()
 			}
-
     });
   }
   remove(chat) {

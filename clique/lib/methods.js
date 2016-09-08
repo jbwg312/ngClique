@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Chats, Messages, Users, Groups } from '../lib/collections';
 
+
 Meteor.methods({
   newMessage(message) {
 
