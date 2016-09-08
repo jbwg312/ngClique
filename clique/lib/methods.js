@@ -1,9 +1,9 @@
 import { Meteor } from 'meteor/meteor';
-import { Chats, Messages } from '../lib/collections';
+import { Chats, Messages, Groups, Users } from '../lib/collections';
 
 Meteor.methods({
   newMessage(message) {
-    
+
     check(message, {
       text: String,
       chatId: String

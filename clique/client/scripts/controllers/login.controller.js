@@ -9,4 +9,5 @@ export default class LoginCtrl extends Controller {
     super(...arguments);
   }
 }
+
 LoginCtrl.$inject = ['$stateParams', '$timeout', '$ionicScrollDelegate'];
