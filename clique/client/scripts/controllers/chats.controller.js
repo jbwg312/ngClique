@@ -5,7 +5,6 @@ import { Chats, Users, Groups } from '../../../lib/collections';
 export default class ChatsCtrl extends Controller {
   constructor() {
     super(...arguments);
-
     this.helpers({
       data() {
         return Groups.find();
